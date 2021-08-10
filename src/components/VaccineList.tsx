@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "../styles/styles.module.css";
 
 type Props = {
   data: any;
@@ -70,7 +71,7 @@ export const VaccineList = (props: Props) => {
             <div>
               {total ? (
                 <div>
-                  Males: {total.gender.male} (
+                  &emsp;Males: {total.gender.male} (
                   {Math.round(
                     (total.gender.male /
                       (total.gender.male +
@@ -82,7 +83,7 @@ export const VaccineList = (props: Props) => {
                 </div>
               ) : (
                 <div>
-                  Males: {data.gender.male} (
+                  &emsp;Males: {data.gender.male} (
                   {Math.round(
                     (data.gender.male /
                       (data.gender.male +
@@ -97,7 +98,7 @@ export const VaccineList = (props: Props) => {
             <div>
               {total ? (
                 <div>
-                  Females: {total.gender.female} (
+                  &emsp;Females: {total.gender.female} (
                   {Math.round(
                     (total.gender.female /
                       (total.gender.male +
@@ -109,7 +110,7 @@ export const VaccineList = (props: Props) => {
                 </div>
               ) : (
                 <div>
-                  Females: {data.gender.female} (
+                  &emsp;Females: {data.gender.female} (
                   {Math.round(
                     (data.gender.female /
                       (data.gender.male +
@@ -124,7 +125,7 @@ export const VaccineList = (props: Props) => {
             <div>
               {total ? (
                 <div>
-                  Nonbinary: {total.gender.nonbinary} (
+                  &emsp;Nonbinary: {total.gender.nonbinary} (
                   {Math.round(
                     (total.gender.nonbinary /
                       (total.gender.male +
@@ -136,7 +137,7 @@ export const VaccineList = (props: Props) => {
                 </div>
               ) : (
                 <div>
-                  Nonbinary: {data.gender.nonbinary} (
+                  &emsp;Nonbinary: {data.gender.nonbinary} (
                   {Math.round(
                     (data.gender.nonbinary /
                       (data.gender.male +

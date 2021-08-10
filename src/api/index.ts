@@ -17,7 +17,7 @@ export interface GetVaccineResponse {
 }
 
 export const createApiClient = () => {
-  const apiUrl = "https://solita-backend.herokuapp.com";
+  const apiUrl = "https://vaccine-exercise-backend.herokuapp.com";
   //const apiUrl = "http://localhost:5000";
   return {
     getVaccines: async (

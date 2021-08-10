@@ -3,11 +3,9 @@ import { Layout } from "./components/Layout";
 
 const App = () => {
   return (
-    <>
-      <div className={styles.wrap}>
-        <Layout />
-      </div>
-    </>
+    <div className={styles.wrap}>
+      <Layout />
+    </div>
   );
 };
 
