@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "../styles/styles.module.css";
 
 type Props = {
   data: any;

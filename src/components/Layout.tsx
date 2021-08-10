@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 import { createApiClient, GetVaccineResponse } from "../api";
 import { LinearProgress, Button } from "@material-ui/core";
 import { useEffect } from "react";
+import "react-calendar/dist/Calendar.css";
 
 export const Layout = () => {
   const client = createApiClient();
@@ -81,12 +82,14 @@ export const Layout = () => {
         <Header />
       </div>
       <div className={styles.calendar}>
-        <Calendar
-          onChange={(e: any) => changeDate(e)}
-          defaultActiveStartDate={new Date(2021, 3, 12)}
-          minDate={new Date(2021, 0, 2)}
-          maxDate={new Date(2021, 3, 12)}
-        />
+        <div className={"Calendar"}>
+          <Calendar
+            onChange={(e: any) => changeDate(e)}
+            defaultActiveStartDate={new Date(2021, 3, 12)}
+            minDate={new Date(2021, 0, 2)}
+            maxDate={new Date(2021, 3, 12)}
+          />
+        </div>
       </div>
       <div className={styles.vaccineInfo}>
         Vaccine data on {dayjs(date).format("DD/MM/YYYY")}
