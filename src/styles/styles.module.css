@@ -1,6 +1,6 @@
 .wrap {
   margin: auto;
-  max-width: 50rem;
+  max-width: 1200px;
   width: 80%;
   border-left: 1px solid cornflowerblue;
   border-right: 1px solid cornflowerblue;
@@ -16,7 +16,11 @@
   margin-left: auto;
   margin-right: auto;
 }
-.vaccineWrap {
+.error {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .vaccineHeader {
   font-size: 2rem;
@@ -24,10 +28,22 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid cornflowerblue;
 }
-.vaccineList {
+.vaccineWrap {
+  min-height: 30rem;
+  overflow: hidden;
   font-size: 20px;
-  border-bottom: 1px solid cornflowerblue;
-  padding: 1rem;
+  margin: 10px;
+}
+.vaccineLeft {
+  float: left;
+  margin-right: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+  height: 30rem;
+}
+.vaccineRight {
+  overflow: hidden;
+  padding-bottom: 10px;
   height: 30rem;
 }
 .loading {
@@ -39,4 +55,14 @@
   font-size: 2rem;
   text-align: center;
   padding-top: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrap {
+    width: 100%;
+  }
+  .vaccineLeft {
+    float: none;
+    width: auto;
+  }
 }

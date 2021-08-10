@@ -18,7 +18,7 @@ export interface GetVaccineResponse {
 
 export const createApiClient = () => {
   const apiUrl = "https://solita-backend.herokuapp.com";
-  // const apiUrl = "http://localhost:5000";
+  //const apiUrl = "http://localhost:5000";
   return {
     getVaccines: async (
       date: string,
@@ -28,7 +28,6 @@ export const createApiClient = () => {
         const d = qs.stringify({ date });
         const v = qs.stringify({ vaccine });
         const res = await fetch(`${apiUrl}/vaccines?${d}&${v}`);
-        console.log(res);
         if (res.status === 200) {
           const data = await res.json();
           return data;
