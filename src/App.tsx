@@ -1,5 +1,5 @@
 import styles from "./styles/styles.module.css";
-import { Layout } from "./components/Layout";
+import { Layout } from "./components/layout/Layout";
 
 const App = () => {
   return (

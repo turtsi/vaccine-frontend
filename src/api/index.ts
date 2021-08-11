@@ -9,6 +9,13 @@ export interface GetVaccineResponse {
   totalExpiredBottles: number;
   totalExpiredInjections: number;
   nextTenDayExpire: number;
+  vaccinationsPerDistrict: {
+    hyks: number;
+    kys: number;
+    oys: number;
+    tays: number;
+    tyks: number;
+  };
   gender: {
     male: number;
     female: number;

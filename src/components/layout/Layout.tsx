@@ -1,10 +1,10 @@
 import { Header } from "./Header";
-import { VaccineList } from "./VaccineList";
+import { VaccineList } from "../lists/VaccineList";
 import Calendar from "react-calendar";
-import styles from "../styles/styles.module.css";
+import styles from "../../styles/styles.module.css";
 import { useState } from "react";
 import dayjs from "dayjs";
-import { createApiClient, GetVaccineResponse } from "../api";
+import { createApiClient, GetVaccineResponse } from "../../api";
 import { LinearProgress, Button } from "@material-ui/core";
 import { useEffect } from "react";
 import "react-calendar/dist/Calendar.css";

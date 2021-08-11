@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { GenderList } from "./GenderList";
+import { DistrictList } from "./DistrictList";
 
 type Props = {
   data: any;
@@ -15,6 +17,13 @@ type TotalData = {
   totalExpiredBottles: number;
   totalExpiredInjections: number;
   nextTenDayExpire: number;
+  vaccinationsPerDistrict: {
+    hyks: number;
+    kys: number;
+    oys: number;
+    tays: number;
+    tyks: number;
+  };
   gender: {
     male: number;
     female: number;
@@ -66,88 +75,8 @@ export const VaccineList = (props: Props) => {
             {total ? total.nextTenDayExpire : data.nextTenDayExpire}
           </div>
           <div>
-            Number of vaccinated per gender:{" "}
-            <div>
-              {total ? (
-                <div>
-                  &emsp;Males: {total.gender.male} (
-                  {Math.round(
-                    (total.gender.male /
-                      (total.gender.male +
-                        total.gender.female +
-                        total.gender.nonbinary)) *
-                      100
-                  )}
-                  %)
-                </div>
-              ) : (
-                <div>
-                  &emsp;Males: {data.gender.male} (
-                  {Math.round(
-                    (data.gender.male /
-                      (data.gender.male +
-                        data.gender.female +
-                        data.gender.nonbinary)) *
-                      100
-                  )}
-                  %)
-                </div>
-              )}
-            </div>
-            <div>
-              {total ? (
-                <div>
-                  &emsp;Females: {total.gender.female} (
-                  {Math.round(
-                    (total.gender.female /
-                      (total.gender.male +
-                        total.gender.female +
-                        total.gender.nonbinary)) *
-                      100
-                  )}
-                  %)
-                </div>
-              ) : (
-                <div>
-                  &emsp;Females: {data.gender.female} (
-                  {Math.round(
-                    (data.gender.female /
-                      (data.gender.male +
-                        data.gender.female +
-                        data.gender.nonbinary)) *
-                      100
-                  )}
-                  %)
-                </div>
-              )}
-            </div>
-            <div>
-              {total ? (
-                <div>
-                  &emsp;Nonbinary: {total.gender.nonbinary} (
-                  {Math.round(
-                    (total.gender.nonbinary /
-                      (total.gender.male +
-                        total.gender.female +
-                        total.gender.nonbinary)) *
-                      100
-                  )}
-                  %)
-                </div>
-              ) : (
-                <div>
-                  &emsp;Nonbinary: {data.gender.nonbinary} (
-                  {Math.round(
-                    (data.gender.nonbinary /
-                      (data.gender.male +
-                        data.gender.female +
-                        data.gender.nonbinary)) *
-                      100
-                  )}
-                  %)
-                </div>
-              )}
-            </div>
+            <DistrictList data={data} total={total} />
+            <GenderList data={data} total={total} />
           </div>
         </div>
       )}
@@ -177,6 +106,28 @@ const getTotal = (props: Props) => {
       data.nextTenDayExpire +
       option1.nextTenDayExpire +
       option2.nextTenDayExpire,
+    vaccinationsPerDistrict: {
+      hyks:
+        data.vaccinationsPerDistrict.hyks +
+        option1.vaccinationsPerDistrict.hyks +
+        option2.vaccinationsPerDistrict.hyks,
+      kys:
+        data.vaccinationsPerDistrict.kys +
+        option1.vaccinationsPerDistrict.kys +
+        option2.vaccinationsPerDistrict.kys,
+      oys:
+        data.vaccinationsPerDistrict.oys +
+        option1.vaccinationsPerDistrict.oys +
+        option2.vaccinationsPerDistrict.oys,
+      tays:
+        data.vaccinationsPerDistrict.tays +
+        option1.vaccinationsPerDistrict.tays +
+        option2.vaccinationsPerDistrict.tays,
+      tyks:
+        data.vaccinationsPerDistrict.tyks +
+        option1.vaccinationsPerDistrict.tyks +
+        option2.vaccinationsPerDistrict.tyks,
+    },
     gender: {
       male: data.gender.male + option1.gender.male + option2.gender.male,
       female:

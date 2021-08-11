@@ -4,6 +4,7 @@
   width: 80%;
   border-left: 1px solid cornflowerblue;
   border-right: 1px solid cornflowerblue;
+  font-family: Roboto;
 }
 .header {
   font-size: 4rem;
@@ -29,22 +30,21 @@
   border-bottom: 1px solid cornflowerblue;
 }
 .vaccineWrap {
-  min-height: 30rem;
+  display: inline;
+  height: fit-content;
   overflow: hidden;
-  font-size: 20px;
-  margin: 10px;
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 .vaccineLeft {
   float: left;
+  margin-left: 10px;
   margin-right: 10px;
-  padding-bottom: 10px;
   width: 50%;
-  height: 30rem;
 }
 .vaccineRight {
   overflow: hidden;
-  padding-bottom: 10px;
-  height: 30rem;
+  margin-right: 10px;
 }
 .loading {
   display: block;
