@@ -1,14 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { GenderList } from "./GenderList";
 import { DistrictList } from "./DistrictList";
+import { GetVaccineResponse } from "../../api";
 
 type Props = {
-  data: any;
-  option1?: any;
-  option2?: any;
+  data: GetVaccineResponse | undefined;
+  option1?: GetVaccineResponse | undefined;
+  option2?: GetVaccineResponse | undefined;
 };
 
-type TotalData = {
+export type TotalData = {
   totalOrders: number;
   ordersToday: number;
   totalInjections: number;
@@ -31,15 +33,13 @@ type TotalData = {
   };
 };
 
-export const VaccineList = (props: Props) => {
-  const { data, option1, option2 } = props;
+export const VaccineList = ({ data, option1, option2 }: Props) => {
   const [total, setTotal] = useState<TotalData>();
 
   useEffect(() => {
     if (option1 && option2) {
-      setTotal(getTotal(props));
+      setTotal(getTotal({ data, option1, option2 }));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -84,8 +84,9 @@ export const VaccineList = (props: Props) => {
   );
 };
 
-const getTotal = (props: Props) => {
-  const { data, option1, option2 } = props;
+const getTotal = ({ data, option1, option2 }: Props) => {
+  if (data === undefined || option1 === undefined || option2 === undefined)
+    return;
   const total: TotalData = {
     ordersToday: data.ordersToday + option1.ordersToday + option2.ordersToday,
     totalOrders: data.totalOrders + option1.totalOrders + option2.totalOrders,

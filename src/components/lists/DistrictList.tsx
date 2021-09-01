@@ -1,8 +1,15 @@
 import { TreeView, TreeItem } from "@material-ui/lab";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import { GetVaccineResponse } from "../../api";
+import { TotalData } from "./VaccineList";
 
-export const DistrictList = ({ data, total }: any) => {
+type Props = {
+  data: GetVaccineResponse;
+  total: TotalData | undefined;
+};
+
+export const DistrictList = ({ data, total }: Props) => {
   const percent = (district: string, list: string) => {
     if (total) {
       const totalDistricts =

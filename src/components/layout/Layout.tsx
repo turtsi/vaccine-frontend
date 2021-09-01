@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Header } from "./Header";
 import { VaccineList } from "../lists/VaccineList";
 import Calendar from "react-calendar";
@@ -34,7 +35,6 @@ export const Layout = () => {
       }
     }
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
 
   useEffect(() => {
@@ -51,7 +51,6 @@ export const Layout = () => {
       }
     }
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
 
   useEffect(() => {
@@ -70,7 +69,6 @@ export const Layout = () => {
       }
     }
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
 
   const changeDate = (e: string) => {

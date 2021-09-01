@@ -1,15 +1,15 @@
 import { TreeView, TreeItem } from "@material-ui/lab";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import { GetVaccineResponse } from "../../api";
+import { TotalData } from "./VaccineList";
 
 type Props = {
-  data: any;
-  total: any;
+  data: GetVaccineResponse;
+  total: TotalData | undefined;
 };
 
-export const GenderList = (props: Props) => {
-  const { data, total } = props;
-
+export const GenderList = ({ data, total }: Props) => {
   const percent = (gender: string, list: string) => {
     if (total) {
       const totalGenders =
